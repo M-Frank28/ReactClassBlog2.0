@@ -2,6 +2,9 @@ import Form from 'react-bootstrap/Form';
 import { useState } from 'react';
 import {Button, ToastContainer} from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.css';
+import axios from 'axios';
+import { ToastContainer,toast } from 'react-toastify';
+import 'react-toastify/dist/react-toastify.js';
 
 const Create =()=>{
 
@@ -21,9 +24,36 @@ const Create =()=>{
     }
 
 
-    const handleSubmit=(e)=>{
-        //code handle submit
-    }
+   
+  const handleSubmit=(e)=>{
+    e.preventDefault()
+    axios.post('http://localhost:4000/blogs',data)
+    .then(res=>{
+      toast.success('new blog added successfully',{
+        position: toast.POSITION.TOP_RIGHT,
+        autoClose:2000,
+       
+      })
+    })
+
+    .catch(err=>{
+      toast.error('An error Occured while adding blog',{
+        position:toast.POSITION.TOP_RIGHT,
+        autoClose:2000,
+       
+      })
+    })
+
+
+
+
+
+
+  };
+
+
+
+
 
 return (
 <div onSubmit={handleSubmit}>
