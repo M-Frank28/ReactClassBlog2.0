@@ -19,7 +19,7 @@ const Create = ()=>{
             return{...prev, [name]: value}
     
         })
-
+ 
     }
 
 
