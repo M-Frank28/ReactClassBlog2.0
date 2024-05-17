@@ -46,9 +46,6 @@ const Create = ()=>{
   };
 
 
-
-
-
 return (
 <div onSubmit={handleSubmit}>
 

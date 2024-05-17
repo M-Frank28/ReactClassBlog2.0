@@ -9,6 +9,7 @@ function App() {
 
 
     <Router>
+
     <div className="App">
 
     <NavBar/>
@@ -18,10 +19,11 @@ function App() {
 <Switch>
 
 
-
 <Route  path="/Create">
 <Create/>
 </Route>
+
+
 
 
 
